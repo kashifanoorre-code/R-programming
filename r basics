@@ -1,0 +1,31 @@
+#simple operations
+x <- 10
+y <- 20
+x+y
+print("hello world")
+
+#datatype
+class(x)
+
+#taking input
+name <- readline(“enter your name: ”)
+print(name)
+age <- as.numeric(readline("enter your number: "))
+print(age)
+
+#Write an R program to accept two numbers and find their sum.
+num1 <- as.numeric(readline("enter first number: "))
+num2 <- as.numeric(readline("enter second number: "))
+sum <- num1 + num2
+print(sum)
+
+#Write an R program that takes a number from the user and prints its square.
+x <- as.numeric(readline("enter number: "))
+print(x*x)
+
+#vectors
+numbers <- c(10,20,30,40,50)
+print(numbers)
+
+#accessing elements in a vector(indexing starts from 1)
+print(numbers[1])
