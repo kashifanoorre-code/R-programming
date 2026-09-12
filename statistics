@@ -1,0 +1,19 @@
+x <- c(10,20,40,70,30,50,60)
+sum(x) #total
+mean(x) #average
+min(x) #minimum
+max(x) #maximum
+sd(x) #standard deviation
+var(x) #variance
+summary(x) #summary of everything
+
+quantile(x) #to find the quartiles
+IQR(x) #to find the inter quartile range
+
+#finding mode
+hair <-c("brown","black","black","blonde","black","brown")
+table(hair)
+
+#mode = black (highest frequency)
+which.max(table(hair))
+names(which.max(table(hair)))
