@@ -1,0 +1,14 @@
+#matrix
+m <- matrix(c(10,20,30,40,50,60), nrow = 2, ncol = 3)
+m
+n <- matrix(c(30,40,50,60,40,90), nrow = 2, ncol =3, byrow = TRUE)
+n
+n[1,2]
+nrow(n)
+ncol(n)
+dim(m)
+
+#matrix_multiplication
+a <- matrix(c(1,2,3,6), nrow = 2 , ncol = 2)
+b <- matrix(c(5,3,6,3), nrow = 2, ncol = 2)
+a%*%b #matrix multiplication
