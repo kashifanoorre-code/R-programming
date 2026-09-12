@@ -1,0 +1,24 @@
+students <- data.frame(
+  maths = c(70, 85, 90),
+  statistics = c(75, 80, 95),
+  gender = c("F","M","F")
+  
+)
+students
+students$maths #gives the students column
+students[1,3]  #accessing elements
+students[1,]   #accessing row
+students[,1]   #accessing column
+
+
+#filtering students whose stats marks are greater than 80
+students[students$statistics > 80 ,] #students who got more than 80 marks in statistics
+
+students[students$gender == "F",] #students who are females
+
+students[students$statistics > 90 & students$maths > 70,] #students who got above 90 in stats and above 70 in maths
+
+students[students$statistics > 90 | students$maths > 70,]
+#students who got above 90 in stats or above 70 in maths
+
+students[students$statistics > 65 , "maths"]
