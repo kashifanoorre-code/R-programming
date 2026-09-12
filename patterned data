@@ -1,0 +1,12 @@
+#creation of patterned data
+seq(1,10) #sequence
+seq(1,14, by=2)
+seq(20, 0, by=-2) #decreasing sequence
+
+rep(1,5)  #repetition
+rep(1:5, times=5)
+rep(1:3, each = 3)
+rep(-1:1,each = 3)
+n <- c(1,-1)
+rep(n, times=4)
+seq(2,17,by = 3)
