@@ -10,3 +10,14 @@ rep(-1:1,each = 3)
 n <- c(1,-1)
 rep(n, times=4)
 seq(2,17,by = 3)
+
+x <- c(10,20,30,40,50)
+which(x>35)
+which(x == 40)
+
+sort(x) #ascending order
+sort(x, decreasing = TRUE) #descending order
+
+y = c(2,4,5,2,3,8,9,2,4,5)
+table(y) #tells us how many times a value occurs
+
