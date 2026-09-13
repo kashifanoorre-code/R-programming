@@ -12,3 +12,19 @@ dim(m)
 a <- matrix(c(1,2,3,6), nrow = 2 , ncol = 2)
 b <- matrix(c(5,3,6,3), nrow = 2, ncol = 2)
 a%*%b #matrix multiplication
+
+A <- matrix(c(10,20,30,40,50,60), nrow = 2, ncol = 3)
+B <- matrix(c(40,50,20,50,70,40), nrow = 2 , ncol = 3)
+A
+t(A)
+A[2,3]
+A[,2]
+A[1,]
+A + B
+
+#determinant of a matrix
+C <- matrix(c(10,20,30,40), nrow = 2, ncol = 2)
+C
+det(C)
+#inverse of a matrix
+solve(C)
