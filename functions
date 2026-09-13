@@ -1,0 +1,10 @@
+x <- 10
+name <- "kashifa"
+marks <- c(90, 86, 79)
+
+#returns objects currently in memory
+ls()
+
+#removes an element
+rm(x)
+
