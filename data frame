@@ -22,3 +22,11 @@ students[students$statistics > 90 | students$maths > 70,]
 #students who got above 90 in stats or above 70 in maths
 
 students[students$statistics > 65 , "maths"]
+
+speed <- c(40,50,45,55,60)
+road <- c("good","bad", "good","good","bad")
+#what is the average speed for each road condition?
+tapply(speed,road,mean)
+#tapply(data,group,mean)
+tapply(speed,road,sd)
+
