@@ -7,3 +7,27 @@ if(marks >= 90) {
 } else {
     print("C")
 }
+
+#for loop
+for(i in 1:5){
+  print(i)
+}
+marks <- c(10,20,30,40)
+for(i in marks){
+  print(i) 
+}
+
+for(i in 1:10){
+  if(i %% 2 == 0){
+    print(i)
+  }
+}
+
+
+#while loop
+i<-1
+while(i<=5){
+  print(i)
+  i<-i+1
+}
+
