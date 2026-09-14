@@ -1,0 +1,26 @@
+1:20
+seq(1,40, by = 3)
+seq(20,2,by= -2)
+rep(1:5,each = 3)
+n <- c(-1,1)
+rep(n,times = 20)
+a <- c(1,1)
+b<- c(5,5,5,5,5)
+x1 <- c(rep(1,times=2), rep(2, times = 5), rep(3, times = 2), rep(4,times = 1), rep(5,times = 4))
+x1
+
+x <- c(20,8,3,6,16,11,6,8,19,8,6,17,15,1,14,16,16,9,16,13)
+length(x)
+sort(x)
+sort(x, decreasing = TRUE)
+x[1:5] 
+tail(x,4)
+
+x[x>10] #elements greater than x
+which(x>10) #positions
+length(which(x>10)) #number of elements which are greater than 10
+
+length(which(x==8))
+length(which(x == 11))
+length(which(x == 16))
+table(x)
