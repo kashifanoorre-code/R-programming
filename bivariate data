@@ -1,0 +1,127 @@
+#PROBLEM 1 BIVARIATE DATA
+rm(list=ls())
+x=c(18,16,15,12)
+y=c(770,785,790,800)
+plot(x,y)   #Scatterplot
+cov(x,y)    #Covariance
+cor(x,y)    #Correlation
+
+#Linear model:y=a+bx   Command: lm(y~x)
+fit1=lm(y~x)
+summary(fit1)
+#Write the linear model. 
+#Explain goodeness of fit. Look at multiple r sq.
+
+#Fitted values : y.hat=a.hat+b.hat*x
+fitted1=fit1$coefficients[1]+fit1$coefficients[2]*x
+fitted2=fit1$fitted.values
+fitted1;fitted2
+predict(fit1)
+
+#Find the estimate of y for x=17: y.hat=a.hat+b.hat*17
+fit1$coefficients[1]+fit1$coefficients[2]*17
+
+# Residuals: y-y.hat
+res1=y-fitted1;res1
+res2=fit1$residuals;res2
+resid(fit1)
+plot(predict(fit1),resid(fit1))
+abline(h=0,col="red")
+
+#Model without intercept
+fit.var=lm(y~-1+x);summary(fit.var)
+#Quadratic model
+fit1=lm(y~I(x)+I(x^2))
+summary(fit1)
+
+#Exponential model
+fit2=lm(log(y)~x)
+summary(fit2)
+a.hat=exp(fit2$coefficients[1])
+b.hat=exp(fit2$coefficients[2])
+y.hat=a.hat*(b.hat^x)
+
+
+
+#Manipulation on a dataset
+#Trees dataset
+trees
+class(trees)
+is.data.frame(trees)
+summary(trees)
+dim(trees)
+names(trees)
+str(trees)
+
+attach(trees)
+plot(Girth,Volume)
+plot(Volume, Girth)
+cor(Girth,Volume)
+
+#Repeat manually? NO.
+cor(trees)
+pairs(trees)
+
+#How to read scatterplot matrix?
+#First column-> Girth in X axis, other var in Y.
+#Second column-> Height in X, other in Y.
+
+#Check whether volume linearly depends on height.
+fit1=lm(Volume~Height)
+summary(fit1)
+plot(fit1$fitted.values,resid(fit1))
+abline(h=0,col="red")
+
+#Spurious correlations
+rm(list=ls())
+library(spuriouscorrelations)
+??math_doctorates
+cor(math_doctorates$x,math_doctorates$y)
+plot(math_doctorates$x,math_doctorates$y,xlab="Math doctorate",ylab="Uranium",main="Math doctorate vs Uranium stored")
+
+??fishing_boat_drownings
+??miss_america_age 
+??japanese_cars_sold
+
+
+#Attitude dataset
+attitude
+??attitude
+#data(attitude)
+str(attitude)
+summary(attitude)
+dim(attitude)
+names(attitude)
+
+#Correlation matrix
+cor(attitude)
+#Data can have miltucollinearity. Find cor except response.
+cor(attitude[, -1])  #Correlation matrix except rating
+pairs(attitude)      #scatterplot matrix
+
+#How to read scatterplot matrix?
+#First column-> rating in X axis, other var in Y.
+#Second column-> complaint in X, other in Y.
+
+#Want to check by pairs.
+#How extract?
+attach(attitude)
+rating
+complaints
+cor(rating, complaints)
+plot(rating,complaints)
+
+#Linear model: y=a+bx   Command: lm(y~x)
+fit1=lm(rating~complaints)
+summary(fit1)
+
+#Quadtratic model
+fit2=lm(rating~I(complaints)+I(complaints^2))
+summary(fit2)
+
+#Multiple linear regression model
+model=lm(rating ~ complaints + privileges + learning +raises + critical + advance,data = attitude)
+summary(model)
+
+
+#detach(attitude)
